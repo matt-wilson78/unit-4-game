@@ -13,15 +13,23 @@
 //what I'll need
 
 //var for random number
-
+var randomNum = Math.floor(Math.random() * 102) + 19;
+console.log(randomNum);
 //var for each crystal? or one var that will update all?
-
+var crystalOneNum = Math.floor(Math.random() * 13);
+console.log("C 1: " + crystalOneNum);
+var crystalTwoNum = Math.floor(Math.random() * 13);
+console.log("c 2: " + crystalTwoNum);
+var crystalThreeNum = Math.floor(Math.random() * 13);
+console.log("c 3: " + crystalThreeNum);
+var crystalFourNum = Math.floor(Math.random() * 13);
+console.log("c 4: " + crystalFourNum);
 //var for wins
-
+var wins = 0;
 //var for losses
-
+var losses = 0;
 //var for score
-
+var score = 0;
 //click functions for each crystal
 
 //function to increase score as crystals are clicked
