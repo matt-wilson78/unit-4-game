@@ -20,13 +20,13 @@
 var randomNum = Math.floor(Math.random() * 102) + 19;
 console.log(randomNum);
 //var for each crystal? or one var that will update all?
-var crystalOneNum = Math.floor(Math.random() * 13);
+var crystalOneNum = Math.floor(Math.random() * 12) + 1;
 console.log("C 1: " + crystalOneNum);
-var crystalTwoNum = Math.floor(Math.random() * 13);
+var crystalTwoNum = Math.floor(Math.random() * 12) + 1;
 console.log("c 2: " + crystalTwoNum);
-var crystalThreeNum = Math.floor(Math.random() * 13);
+var crystalThreeNum = Math.floor(Math.random() * 12) + 1;
 console.log("c 3: " + crystalThreeNum);
-var crystalFourNum = Math.floor(Math.random() * 13);
+var crystalFourNum = Math.floor(Math.random() * 12) + 1;
 console.log("c 4: " + crystalFourNum);
 //var for wins
 var wins = 0;
@@ -36,7 +36,7 @@ var losses = 0;
 var score = 0;
 //function to reset/ start game
 function restart() {
-    $(function () {
+    $(function() {
         score = 0;
         wins = 0;
         losses = 0;
@@ -49,7 +49,7 @@ function restart() {
 }
 
 function reset() {
-    score = 0;
+    $("#totalScore").html(0);
     randomNum;
     crystalOneNum;
     crystalTwoNum;
@@ -60,67 +60,59 @@ function reset() {
 $("#numberToMatch").html(randomNum);
 
 //click functions for each crystal
-$("#crystal1").on("click", function () {
+$("#crystal1").on("click", function() {
     var updatedScore = score + crystalOneNum;
     console.log(score);
     $("#totalScore").html(updatedScore);
     score = updatedScore;
-    if (updatedScore === randomNum) {
-        wins++;
-        reset();
-    }   else if (score > randomNum) {
-        losses++;
-        reset();
-    }   
+    didIWin();
+
 })
 
-$("#crystal2").on("click", function () {
+$("#crystal2").on("click", function() {
     var updatedScore = score + crystalTwoNum;
     $("#totalScore").html(updatedScore);
     score = updatedScore;
-    if (score === randomNum) {
-        wins++;
-        reset();
-    }   else if (score > randomNum) {
-        losses++;
-        reset();
-    }   
+    didIWin();
 
 })
 
-$("#crystal3").on("click", function () {
+$("#crystal3").on("click", function() {
     var updatedScore = score + crystalThreeNum;
     $("#totalScore").html(updatedScore);
     score = updatedScore;
-    if (score === randomNum) {
-        wins++;
-        reset();
-    }   else if (score > randomNum) {
-        losses++;
-        reset();
-    }   
+    didIWin();
+
 })
 
-$("#crystal4").on("click", function () {
+$("#crystal4").on("click", function() {
     var updatedScore = score + crystalFourNum;
     $("#totalScore").html(updatedScore);
     score = updatedScore;
-    if (score === randomNum) {
-        wins++;
-        reset();
-    }   else if (score > randomNum) {
-        losses++;
-        reset();
-    }   
+    didIWin();
+
 })
+
+$("#restart").on("click", function() {
+    restart();
+});
 
 //function to determine win or loss, if loop
 if (score === randomNum) {
     wins++;
     reset();
-}   else if (score > randomNum) {
+} else if (score > randomNum) {
     losses++;
     reset();
-}   
+}
 
+function didIWin() {
+    if (score === randomNum) {
+        wins++;
+        reset();
+    } else if (score > randomNum) {
+        losses++;
+        reset();
+    }
+}
 //functions to post wins & losses

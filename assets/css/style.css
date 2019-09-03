@@ -3,3 +3,14 @@ img {
     height: 150px;
     object-fit: cover;
 }
+
+body {
+    background: url("https://cdn.suwalls.com/wallpapers/3d/blue-crystal-explosion-29889-1920x1080.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    
+  }
+
+  
