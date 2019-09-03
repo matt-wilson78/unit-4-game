@@ -35,39 +35,92 @@ var losses = 0;
 //var for score
 var score = 0;
 //function to reset/ start game
-function reset() {
+function restart() {
     $(function () {
         score = 0;
         wins = 0;
         losses = 0;
+        randomNum;
+        crystalOneNum;
+        crystalTwoNum;
+        crystalThreeNum;
+        crystalFourNum;
     })
+}
+
+function reset() {
+    score = 0;
+    randomNum;
+    crystalOneNum;
+    crystalTwoNum;
+    crystalThreeNum;
+    crystalFourNum;
 }
 
 $("#numberToMatch").html(randomNum);
 
 //click functions for each crystal
 $("#crystal1").on("click", function () {
-    score + crystalOneNum;
+    var updatedScore = score + crystalOneNum;
     console.log(score);
-    $("#totalScore").html(score);
+    $("#totalScore").html(updatedScore);
+    score = updatedScore;
+    if (updatedScore === randomNum) {
+        wins++;
+        reset();
+    }   else if (score > randomNum) {
+        losses++;
+        reset();
+    }   
 })
+
 $("#crystal2").on("click", function () {
-    score + crystalTwoNum;
-    $("#totalScore").html(score);
+    var updatedScore = score + crystalTwoNum;
+    $("#totalScore").html(updatedScore);
+    score = updatedScore;
+    if (score === randomNum) {
+        wins++;
+        reset();
+    }   else if (score > randomNum) {
+        losses++;
+        reset();
+    }   
 
 })
+
 $("#crystal3").on("click", function () {
-    score + crystalThreeNum;
-    $("#totalScore").html(score);
-
+    var updatedScore = score + crystalThreeNum;
+    $("#totalScore").html(updatedScore);
+    score = updatedScore;
+    if (score === randomNum) {
+        wins++;
+        reset();
+    }   else if (score > randomNum) {
+        losses++;
+        reset();
+    }   
 })
+
 $("#crystal4").on("click", function () {
-    score + crystalFourNum;
-    $("#totalScore").html(score);
-
+    var updatedScore = score + crystalFourNum;
+    $("#totalScore").html(updatedScore);
+    score = updatedScore;
+    if (score === randomNum) {
+        wins++;
+        reset();
+    }   else if (score > randomNum) {
+        losses++;
+        reset();
+    }   
 })
-//function to increase score as crystals are clicked
 
 //function to determine win or loss, if loop
+if (score === randomNum) {
+    wins++;
+    reset();
+}   else if (score > randomNum) {
+    losses++;
+    reset();
+}   
 
 //functions to post wins & losses
