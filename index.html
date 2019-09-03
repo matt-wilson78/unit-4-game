@@ -25,37 +25,41 @@
 
         <div class="row">
             <div class="col-12">
-                <h1>Crystal Collector</h1>
+                <h1 class="text-white text-center">Crystal Collector</h1>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-6">
-                <div class="card">
-                    <p class="card-text text-center p-2">You will be give a random number at the start of the game.
+            <div class="col-10">
+                <div class="card rounded">
+                    <p class="card-text text-center p-3">You will be give a random number at the start of the game.
                         There are four crystals below. By clicking on a crystal you will add a specific
-                        amount of points to
-                        your total score.
+                        amount of points to your total score.<br><br>
                         You win the game by matching your total score to the random number above the
-                        crystals. You lose if
-                        your score goes above that number.
-                        The value of each crystal is hidden until you click on it.
+                        crystals. You lose if your score goes above that number.<br><br>
+                        The value of each crystal is hidden until you click on it.<br>
                         Each time the game starts, each crystal will be assigned a random number
                         between 1-12.</p>
-                    <h2 class="card-title text-center mb-3">Good Luck!</h2>
+                    <h4 class="card-title text-center mb-3">Good Luck!</h2>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-3">
-                <p id="numberToMatch"></p>
+                <h3 class="text-white mt-3">Number to Match</h3>
+                <div class="row">
+                    <div class="col-3 text-center">
+                        <h2 id="numberToMatch" class="text-white"></h2>
+                    </div>
+                </div>
+                <h2 id="numberToMatch" class="text-white"></h2>
             </div>
             <div class="col-1">
-                <p>Wins</p>
+                <h2 id="numWins" class="text-white mt-3">Wins</h2>
                 <div class="row">
                     <div class="col-1">
-                        <p>Losses</p>
+                        <h2 id="numLosses" class="text-white">Losses</h2>
                     </div>
                 </div>
             </div>
@@ -97,7 +101,7 @@
 
         <div class="row">
             <div class="col-2">
-                <button id="restart" class="btn-outline-light">Restart</button>
+                <button id="restart" class="btn-outline-dark">Restart</button>
             </div>
         </div>
 
