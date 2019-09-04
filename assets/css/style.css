@@ -5,12 +5,13 @@ img {
 }
 
 body {
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgilLWnhYcxH8tYFzc1PP24NyGk6rVuRoTohyS9Ds4E95ibXvMfA") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    background: url("https://wallpaperplay.com/walls/full/0/2/d/214910.jpg") no-repeat center center fixed;
     
   }
 
-  
+.card {
+  background: #92dcf9;
+  opacity: 0.6;
+  font-weight: 900;
+  color: black;
+}
