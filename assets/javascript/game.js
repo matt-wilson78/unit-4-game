@@ -25,11 +25,9 @@ var crystalTwoNum = generateCrystalNumber();
 var crystalThreeNum = generateCrystalNumber();
 var crystalFourNum = generateCrystalNumber();
 
-//var for wins
+//var for wins, losses, score
 var wins = 0;
-//var for losses
 var losses = 0;
-//var for score
 var score = 0;
 
 //function to assign random numbers between 1-12 to crystals
@@ -87,7 +85,7 @@ $("#crystal4").on("click", function () {
 
 })
 
-//function to determine win or loss, if loop
+//function to determine win or loss
 function didIWin() {
     if (score === randomNum) {
         wins++;
@@ -110,11 +108,10 @@ $("#restart").on("click", function () {
     $("#numLosses").html("Losses: " + 0);
     randomNum = generateNumberToMatch();
     $("#numberToMatch").html(randomNum);
-    generateCrystalNumber(crystalOneNum, crystalTwoNum, crystalThreeNum, crystalFourNum);
-    // crystalOneNum = generateCrystalNumber();
-    // crystalTwoNum = generateCrystalNumber();
-    // crystalThreeNum = generateCrystalNumber();
-    // crystalFourNum = generateCrystalNumber();
+    crystalOneNum = generateCrystalNumber();
+    crystalTwoNum = generateCrystalNumber();
+    crystalThreeNum = generateCrystalNumber();
+    crystalFourNum = generateCrystalNumber();
 });
 
 
